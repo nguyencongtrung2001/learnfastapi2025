@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Author } from '@/types';
 import { getImageUrl } from '@/lib/api';
+import Image from 'next/image';
 
 interface AuthorCardProps {
   author: Author;
@@ -12,7 +13,7 @@ export default function AuthorCard({ author }: AuthorCardProps) {
       <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden cursor-pointer">
         {/* Ảnh tác giả */}
         <div className="relative h-48 bg-gray-200">
-          <img
+          <Image
             src={getImageUrl(author.image)}
             alt={author.name}
             className="w-full h-full object-cover"

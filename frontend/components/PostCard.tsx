@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PostWithAuthor } from '@/types';
 import { getImageUrl } from '@/lib/api';
+import Image from 'next/image';
 
 interface PostCardProps {
   post: PostWithAuthor;
@@ -13,7 +14,7 @@ export default function PostCard({ post }: PostCardProps) {
         {/* Ảnh tác giả (nếu có) */}
         {post.author && (
           <div className="relative h-32 bg-gray-200">
-            <img
+            <Image
               src={getImageUrl(post.author.image)}
               alt={post.author.name}
               className="w-full h-full object-cover"
